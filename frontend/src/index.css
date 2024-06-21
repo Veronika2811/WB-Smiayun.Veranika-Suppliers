@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'ALSHauss';
+  src:
+    url('./assets/fonts/ALSHauss-Regular.woff2') format('woff2'),
+    url('./assets/fonts/ALSHauss-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  margin: 0 auto;
+  font-family: 'ALSHauss', 'Arial', sans-serif;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  background-color: #2d2c32;
+}
+
+#root {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
