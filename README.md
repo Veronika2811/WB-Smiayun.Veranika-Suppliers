@@ -7,21 +7,37 @@
 1. **Клонируйте этот репозиторий:**
 
 ```sh
-git clone https://github.com/Veronika2811/WB-Smiayun.Veranika-Suppliers.git
+    git clone https://github.com/Veronika2811/WB-Smiayun.Veranika-Suppliers.git
 ```
 
-2. **Установите зависимости для frontend:**
+2. **Установите зависимости для backend:**
 
-Перейдите в директорию `frontend`
+Перейдите в директорию `backend`
 
 ```sh
-cd ./frontend
+    cd ./backend
 ```
 
 и выполните команду
 
 ```sh
-  npm install
+    npm install
+```
+
+для того, чтобы установить необходимые пакеты и зависимости, указанные в файле package.json. Это необходимо для правильной работы серверной части проекта.
+
+3. **Установите зависимости для frontend:**
+
+Перейдите в директорию `frontend`
+
+```sh
+    cd ./frontend
+```
+
+и выполните команду
+
+```sh
+    npm install
 ```
 
 для того, чтобы установить необходимые пакеты и зависимости для клиентской части проекта.
@@ -35,29 +51,29 @@ cd ./frontend
 1. **Перейдите в директорию backend:**
 
 ```sh
-cd ./backend
+    cd ./backend
 ```
 
 2. **Запустите сервер:**
 
 ```sh
-  node index.js
+    npm run start
 ```
 
 Сервер будет запущен на http://127.0.0.1:7000.
 
 ### Frontend
 
-1. **Перейдите в директорию backend:**
+1. **Перейдите в директорию frontend:**
 
 ```sh
-cd ./frontend
+    cd ./frontend
 ```
 
 2. **Запустите приложение:**
 
 ```sh
-  npm run dev
+    npm run dev
 ```
 
 ## Примечания

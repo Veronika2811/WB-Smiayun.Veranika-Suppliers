@@ -1,45 +1,5 @@
 [
   {
-    "id": 672346,
-    "deliveryDate": "28.09.2024",
-    "city": "Тверь",
-    "quantity": 66,
-    "deliveryType": "Короб",
-    "warehouse": "Внуково",
-    "warehouseAddress": "ул. Байкальская, 8",
-    "status": "В пути"
-  },
-  {
-    "id": 783457,
-    "deliveryDate": "26.06.2024",
-    "city": "Псков",
-    "quantity": 95,
-    "deliveryType": "Монопаллета",
-    "warehouse": "Белая дача",
-    "warehouseAddress": "ул. Волгоградская, 5",
-    "status": "Задерживается"
-  },
-  {
-    "id": 894567,
-    "deliveryDate": "28.06.2024",
-    "city": "Тверь",
-    "quantity": 110,
-    "deliveryType": "Короб",
-    "warehouse": "Электросталь",
-    "warehouseAddress": "ул. Красная, 15",
-    "status": "В пути"
-  },
-  {
-    "id": 905678,
-    "deliveryDate": "19.06.2024",
-    "city": "Псков",
-    "quantity": 75,
-    "deliveryType": "Монопаллета",
-    "warehouse": "Вёшки",
-    "warehouseAddress": "ул. Пушкина, 3",
-    "status": "В пути"
-  },
-  {
     "id": 127891,
     "deliveryDate": "28.06.2024",
     "city": "Псков",
@@ -68,16 +28,6 @@
     "warehouse": "Внуково",
     "warehouseAddress": "ул. Сибирская, 15",
     "status": "Задерживается"
-  },
-  {
-    "id": 450153,
-    "deliveryDate": "28.06.2024",
-    "city": "Кострома",
-    "quantity": 85,
-    "deliveryType": "Короб",
-    "warehouse": "Белая дача",
-    "warehouseAddress": "ул. Лесная, 12",
-    "status": "В пути"
   },
   {
     "id": 561235,
@@ -398,5 +348,15 @@
     "warehouse": "Склад",
     "warehouseAddress": "пер. Омский, 3",
     "status": "Задерживается"
+  },
+  {
+    "id": 535804,
+    "deliveryDate": "28.07.2024",
+    "city": "Москва",
+    "quantity": 43,
+    "deliveryType": "Короб",
+    "warehouse": "Склад",
+    "warehouseAddress": "ул. Байкальская, 8",
+    "status": "В пути"
   }
 ]
