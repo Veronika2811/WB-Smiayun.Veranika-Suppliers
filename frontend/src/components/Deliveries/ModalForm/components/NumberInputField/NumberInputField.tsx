@@ -4,12 +4,12 @@ import { Dayjs } from 'dayjs';
 
 import { numberInputFieldSx } from './styles';
 
-type NumberInputFieldProps = {
+interface NumberInputFieldProps {
   fieldName: string;
   endAdornment: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   value?: string | number | Dayjs;
-};
+}
 
 export const NumberInputField = ({
   value,

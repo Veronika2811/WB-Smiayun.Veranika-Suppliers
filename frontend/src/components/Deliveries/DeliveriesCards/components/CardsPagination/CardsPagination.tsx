@@ -3,11 +3,11 @@ import { Pagination } from '@mui/material';
 
 import { cardsPaginationSx } from './styles';
 
-type CardsPaginationProps = {
+interface CardsPaginationProps {
   count: number;
   page: number;
   handleChange: (_: ChangeEvent<unknown>, value: number) => void;
-};
+}
 
 export const CardsPagination = ({
   count,

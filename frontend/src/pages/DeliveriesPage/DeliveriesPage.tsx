@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box } from '@mui/material';
 import { GridRowParams } from '@mui/x-data-grid';
 import { useCustomMediaQuery } from 'hooks/useCustomMediaQuery';
-import { useGetListDeliveriesQuery } from 'service/api';
+import { useGetListDeliveriesQuery } from 'services/api';
 import {
   LOCAL_STORAGE_FILTER,
   LOCAL_STORAGE_SEARCH_VALUE,

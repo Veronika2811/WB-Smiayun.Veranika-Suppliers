@@ -1,14 +1,14 @@
 import { MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import { ChevronDownIcon } from 'ui/icons';
+import { ChevronDownIcon } from 'ui/Icons';
 
 import { FILTER_OPTIONS } from './constants/constants';
 import { filterSelectSx } from './styles';
 
-type FilterSelectProps = {
+interface FilterSelectProps {
   filter: string;
   setFilter: React.Dispatch<React.SetStateAction<string>>;
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
-};
+}
 
 export const FilterSelect = ({
   filter,

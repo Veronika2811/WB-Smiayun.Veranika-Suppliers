@@ -1,17 +1,17 @@
 import { Card, Grid, IconButton } from '@mui/material';
 import { Delivery } from 'types/delivery';
 import { CustomChip } from 'ui/CustomChip';
-import { EditIcon } from 'ui/icons/EditIcon';
+import { EditIcon } from 'ui/Icons/EditIcon';
 
-import { getDate } from '../../utils/getDate';
+import { getDate } from '../../helpers/getDate';
 import { InfoBlock } from '../InfoBlock';
 
 import { deliveryCardSx } from './styles';
 
-type DeliveryCardProps = {
+interface DeliveryCardProps {
   card: Delivery;
   editDelivery: (params: Delivery) => void;
-};
+}
 
 export const DeliveryCard = ({ card, editDelivery }: DeliveryCardProps) => {
   const { id, deliveryDate, status } = card;

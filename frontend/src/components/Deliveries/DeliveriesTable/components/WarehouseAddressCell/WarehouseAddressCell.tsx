@@ -3,11 +3,11 @@ import { GridRenderCellParams } from '@mui/x-data-grid';
 
 import { warehouseAddressCellSx } from './styles';
 
-export const WarehouseAddressCell = ({
-  params,
-}: {
+interface WarehouseAddressCellProps {
   params: GridRenderCellParams;
-}) => (
+}
+
+export const WarehouseAddressCell = ({ params }: WarehouseAddressCellProps) => (
   <Box component="div" sx={warehouseAddressCellSx.container}>
     <Typography variant="body1" sx={warehouseAddressCellSx.warehouse} noWrap>
       {params.value}

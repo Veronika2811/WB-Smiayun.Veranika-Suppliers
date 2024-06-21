@@ -7,13 +7,13 @@ import { Delivery } from 'types/delivery';
 import { CardList } from './components/CardList';
 import { CardsPagination } from './components/CardsPagination/CardsPagination';
 import { FIRST_PAGE } from './constants/constants';
-import { getPaginatedData } from './utils/getPaginatedData';
+import { getPaginatedData } from './helpers/getPaginatedData';
 
-export const DeliveriesCards = ({
-  editDelivery,
-}: {
+interface DeliveriesCardsProps {
   editDelivery: (params: Delivery) => void;
-}) => {
+}
+
+export const DeliveriesCards = ({ editDelivery }: DeliveriesCardsProps) => {
   const [page, setPage] = useState(FIRST_PAGE);
 
   const deliveries = useAppSelector(suppliesSelector);

@@ -1,1 +1,0 @@
-export { TransitionModal } from './TransitionModal';

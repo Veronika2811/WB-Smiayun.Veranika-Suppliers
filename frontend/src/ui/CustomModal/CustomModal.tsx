@@ -2,14 +2,14 @@ import { ReactNode } from 'react';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { Dialog, IconButton } from '@mui/material';
 
-import { TransitionModal } from './components/TransitionModal/TransitionModal';
 import { customModalSx } from './styles';
+import { TransitionModal } from './TransitionModal';
 
-type CustomModalProps = {
+interface CustomModalProps {
   open: boolean;
   onClose: () => void;
   children: ReactNode;
-};
+}
 
 export const CustomModal = ({ open, onClose, children }: CustomModalProps) => (
   <Dialog

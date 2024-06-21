@@ -1,11 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { deliveriesApi } from 'service/api';
+import { deliveriesApi } from 'services/api';
 
 import supplyListReducer from './slices/supplyList';
 
 export const store = configureStore({
   reducer: combineReducers({
-    suppluList: supplyListReducer,
+    supplyList: supplyListReducer,
     [deliveriesApi.reducerPath]: deliveriesApi.reducer,
   }),
   middleware: (getDefaultMiddleware) =>

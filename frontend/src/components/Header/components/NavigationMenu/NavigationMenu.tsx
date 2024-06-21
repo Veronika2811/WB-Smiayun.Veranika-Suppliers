@@ -4,11 +4,11 @@ import { Link } from '@mui/material';
 import { NAVIGATION_LINKS } from './constants/constants';
 import { navigationMenuSx } from './styles';
 
-export const NavigationMenu = ({
-  setOpen,
-}: {
+interface NavigationMenuProps {
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+}
+
+export const NavigationMenu = ({ setOpen }: NavigationMenuProps) => {
   const location = useLocation();
 
   const closeDrawer = () => {

@@ -2,10 +2,10 @@ import { Stack, Typography } from '@mui/material';
 
 import { infoBlockSx } from './styles';
 
-type InfoBlockProps = {
+interface InfoBlockProps {
   label: string;
   value?: string | number;
-};
+}
 
 export const InfoBlock = ({ label, value }: InfoBlockProps) => (
   <Stack direction="column">

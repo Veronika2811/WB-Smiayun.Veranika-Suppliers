@@ -4,7 +4,7 @@ import {
   NEW_DELIVERY,
 } from 'shared/constants/constantsDeliveries';
 
-export type Delivery = {
+export interface Delivery {
   city: string;
   quantity: number;
   deliveryDate: string | Dayjs;
@@ -13,6 +13,6 @@ export type Delivery = {
   status: string;
   id?: number;
   warehouseAddress?: string;
-};
+}
 
 export type TypesModal = typeof EDIT_DELIVERY | typeof NEW_DELIVERY;

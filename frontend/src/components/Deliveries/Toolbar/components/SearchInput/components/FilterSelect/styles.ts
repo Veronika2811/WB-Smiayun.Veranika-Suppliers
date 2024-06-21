@@ -21,6 +21,7 @@ export const filterSelectSx = {
       paddingLeft: '8px',
       paddingTop: '9px',
       color: '#ffffff',
+      fontSize: '16px',
     },
     '&::before, &:hover:not(.Mui-disabled, .Mui-error):before, &::after': {
       border: 'none',

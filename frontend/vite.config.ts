@@ -11,7 +11,7 @@ export default defineConfig({
       hooks: "/src/hooks",
       layout: "/src/layout",
       pages: "/src/pages",
-      service: "/src/service",
+      services: "/src/services",
       shared: "/src/shared",
       store: "/src/store",
       theme: "/src/theme",

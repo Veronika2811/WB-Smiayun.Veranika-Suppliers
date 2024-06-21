@@ -1,10 +1,9 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { Box, SelectChangeEvent } from '@mui/material';
-import dayjs, { Dayjs } from 'dayjs';
-import { usePostDeliveryMutation, usePutDeliveryMutation } from 'service/api';
+import { Dayjs } from 'dayjs';
+import { usePostDeliveryMutation, usePutDeliveryMutation } from 'services/api';
 import {
   EDIT_DELIVERY,
-  FORMAT_DATE_D_M_Y,
   NEW_DELIVERY,
 } from 'shared/constants/constantsDeliveries';
 import { Delivery, TypesModal } from 'types/delivery';
@@ -14,15 +13,16 @@ import { ActionButtons } from './components/ActionButtons';
 import { FormField } from './components/FormField/FormField';
 import { FORM_FIELDS } from './constants/formFields';
 import { INITIAL_STATE_DELIVERY_FORM } from './constants/formInitialState';
-import { getRandomWarehousesAddress } from './utils/getRandomWarehousesAddress';
+import { getFormatDate } from './helpers/getFormatDate';
+import { getRandomWarehousesAddress } from './helpers/getRandomWarehousesAddress';
 import { modalFormSx } from './styles';
 
-type DeliveryFormProps = {
+interface DeliveryFormProps {
   type: TypesModal;
   onClose: () => void;
   selectedDelivery?: Delivery;
   deliveryNumber?: number;
-};
+}
 
 export const ModalForm = ({
   type,
@@ -53,12 +53,11 @@ export const ModalForm = ({
   }, [selectedDelivery]);
 
   const handleDateChange = (date: Dayjs) => {
-    if (date) {
-      setFormData((prevData) => ({
-        ...prevData,
-        deliveryDate: date,
-      }));
-    }
+    if (!date) return;
+    setFormData((prevData) => ({
+      ...prevData,
+      deliveryDate: date,
+    }));
   };
 
   const handleInputChange = (name: string, value: string) => {
@@ -91,7 +90,7 @@ export const ModalForm = ({
       }
     }
 
-    if (deliveryNumber) {
+    if (deliveryNumber && formData.deliveryDate) {
       const {
         deliveryDate,
         city,
@@ -102,14 +101,9 @@ export const ModalForm = ({
         status,
       } = formData;
 
-      const formatDate =
-        typeof deliveryDate === 'string'
-          ? deliveryDate
-          : dayjs(formData.deliveryDate).format(FORMAT_DATE_D_M_Y);
+      const formatDate = getFormatDate(deliveryDate);
 
-      const newWarehouseAddress = warehouseAddress
-        ? warehouseAddress
-        : getRandomWarehousesAddress();
+      const newWarehouseAddress = getRandomWarehousesAddress(warehouseAddress);
 
       const newData = {
         id: deliveryNumber,

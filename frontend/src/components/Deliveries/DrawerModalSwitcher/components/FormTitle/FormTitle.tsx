@@ -2,10 +2,10 @@ import { Typography } from '@mui/material';
 
 import { formTitleSx } from './styles';
 
-type DeliveryFormTitleProps = {
+interface DeliveryFormTitleProps {
   title: string;
   deliveryNumber?: number;
-};
+}
 
 export const FormTitle = ({
   title,

@@ -5,10 +5,10 @@ import { TypesModal } from 'types/delivery';
 
 import { actionButtonsSx } from './styles';
 
-type ActionButtonsProps = {
+interface ActionButtonsProps {
   type: TypesModal;
   onClose: () => void;
-};
+}
 
 export const ActionButtons = ({ type, onClose }: ActionButtonsProps) => {
   const { isTablet } = useCustomMediaQuery();

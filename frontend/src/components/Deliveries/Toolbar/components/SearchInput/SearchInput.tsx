@@ -1,6 +1,6 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, KeyboardEventHandler, useState } from 'react';
 import { Box, InputBase } from '@mui/material';
-import { useLazyGetListDeliveriesQuery } from 'service/api';
+import { useLazyGetListDeliveriesQuery } from 'services/api';
 import {
   LOCAL_STORAGE_FILTER,
   LOCAL_STORAGE_SEARCH_VALUE,
@@ -30,6 +30,14 @@ export const SearchInput = () => {
   const changeInputValue = (e: ChangeEvent<HTMLInputElement>) =>
     setSearchValue(e.target.value);
 
+  const handleKeyDown: KeyboardEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = (e) => {
+    if (e.key !== 'Enter') return;
+
+    handleSearch();
+  };
+
   return (
     <Box sx={searchInputSx['search-input-container']}>
       <InputBase
@@ -44,6 +52,7 @@ export const SearchInput = () => {
         placeholder="Поиск…"
         value={searchValue}
         onChange={changeInputValue}
+        onKeyDown={handleKeyDown}
         endAdornment={<SearchIconButton handleSearch={handleSearch} />}
       />
     </Box>

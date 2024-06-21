@@ -1,14 +1,14 @@
 import { List, ListItem, ListItemText } from '@mui/material';
 import { Dayjs } from 'dayjs';
-import { CheckIcon } from 'ui/icons/CheckIcon';
+import { CheckIcon } from 'ui/Icons/CheckIcon';
 
 import { drawerSelectListSx } from './styles';
 
-type DrawerSelectListProps = {
+interface DrawerSelectListProps {
   fieldsList: string[];
   handleListItemClick: (item: string) => void;
   selectedItem?: string | number | Dayjs;
-};
+}
 
 export const DrawerSelectList = ({
   fieldsList,

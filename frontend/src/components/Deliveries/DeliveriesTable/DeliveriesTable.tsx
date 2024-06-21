@@ -8,7 +8,7 @@ import {
   GridRowParams,
 } from '@mui/x-data-grid';
 import { useAppSelector } from 'hooks/redux-hooks';
-import { useDeleteDeliveryMutation } from 'service/api';
+import { useDeleteDeliveryMutation } from 'services/api';
 import { ITEMS_PER_PAGE } from 'shared/constants/constantsDeliveries';
 import { suppliesSelector } from 'store/selectors';
 import { CustomChip } from 'ui/CustomChip';
@@ -18,11 +18,11 @@ import { NoDeliveriesNotice } from '../NoDeliveriesNotice';
 import { WarehouseAddressCell } from './components/WarehouseAddressCell';
 import { deliveriesTableSx } from './styles';
 
-export const DeliveriesTable = ({
-  editDelivery,
-}: {
+interface DeliveriesTableProps {
   editDelivery: (params: GridRowParams) => void;
-}) => {
+}
+
+export const DeliveriesTable = ({ editDelivery }: DeliveriesTableProps) => {
   const deliveries = useAppSelector(suppliesSelector);
 
   const [deleteDelivery] = useDeleteDeliveryMutation();

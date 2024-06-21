@@ -1,5 +1,5 @@
 import { Chip } from '@mui/material';
-import { getChipColor } from 'ui/CustomChip/utils/getChipColor';
+import { getChipColor } from 'ui/CustomChip/helpers/getChipColor';
 
 import { customChipSx } from './styles';
 

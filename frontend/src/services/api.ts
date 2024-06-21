@@ -2,14 +2,16 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { setBootState, setSupplyList } from 'store/slices/supplyList';
 import { Delivery } from 'types/delivery';
 
+interface ListDeliveriesQuery {
+  filter?: string | null;
+  searchValue?: string | null;
+}
+
 export const deliveriesApi = createApi({
   reducerPath: 'apiSlice',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:7000' }),
   endpoints: (build) => ({
-    getListDeliveries: build.query<
-      Delivery[],
-      { filter?: string | null; searchValue?: string | null }
-    >({
+    getListDeliveries: build.query<Delivery[], ListDeliveriesQuery>({
       query: ({ filter, searchValue }) => {
         const queryParams: Record<string, string | undefined> = {};
 

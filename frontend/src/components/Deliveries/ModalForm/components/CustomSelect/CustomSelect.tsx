@@ -7,7 +7,7 @@ import { useCustomMediaQuery } from 'hooks/useCustomMediaQuery';
 import { DrawerSelect } from './components/DrawerSelect/DrawerSelect';
 import { customSelectSx } from './styles';
 
-type CustomSelectProps = {
+interface CustomSelectProps {
   label: string;
   fieldName: string;
   fieldsList: string[];
@@ -15,7 +15,7 @@ type CustomSelectProps = {
   handleListChange: (name: string, value: string) => void;
   onChangeTextField: (event: ChangeEvent<HTMLInputElement>) => void;
   value?: string | number | Dayjs;
-};
+}
 
 export const CustomSelect = ({
   label,
@@ -30,34 +30,34 @@ export const CustomSelect = ({
 
   const selectValue = typeof value === 'string' ? value : '';
 
-  if (isTablet) {
+  if (!isTablet) {
     return (
-      <Select
-        fullWidth
-        value={selectValue}
-        onChange={onChange}
-        name={fieldName}
-        IconComponent={ExpandMoreRoundedIcon}
-        sx={customSelectSx.select}
-        size="small"
-      >
-        {fieldsList.map((item) => (
-          <MenuItem key={item} value={item}>
-            {item}
-          </MenuItem>
-        ))}
-      </Select>
+      <DrawerSelect
+        value={value}
+        onChangeTextField={onChangeTextField}
+        handleListChange={handleListChange}
+        fieldName={fieldName}
+        label={label}
+        fieldsList={fieldsList}
+      />
     );
   }
 
   return (
-    <DrawerSelect
-      value={value}
-      onChangeTextField={onChangeTextField}
-      handleListChange={handleListChange}
-      fieldName={fieldName}
-      label={label}
-      fieldsList={fieldsList}
-    />
+    <Select
+      fullWidth
+      value={selectValue}
+      onChange={onChange}
+      name={fieldName}
+      IconComponent={ExpandMoreRoundedIcon}
+      sx={customSelectSx.select}
+      size="small"
+    >
+      {fieldsList.map((item) => (
+        <MenuItem key={item} value={item}>
+          {item}
+        </MenuItem>
+      ))}
+    </Select>
   );
 };

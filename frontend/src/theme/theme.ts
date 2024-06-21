@@ -72,6 +72,10 @@ const theme = createTheme(
               lineHeight: '123%',
               letterSpacing: '0.01em',
             },
+            '& .MuiDayCalendar-header .MuiTypography-root.MuiDayCalendar-weekDayLabel:nth-of-type(n + 6)':
+              {
+                color: '#F96666',
+              },
             '& .MuiPickersDay-root': {
               borderRadius: 0,
             },

@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
-import { useLazyGetListDeliveriesQuery } from 'service/api';
+import { useLazyGetListDeliveriesQuery } from 'services/api';
 import { CustomIconButton } from 'ui/CustomIconButton/CustomIconButton';
-import { DocIcon } from 'ui/icons/DocIcon';
-import { LogIcon } from 'ui/icons/LogIcon';
+import { DocIcon } from 'ui/Icons/DocIcon';
+import { LogIcon } from 'ui/Icons/LogIcon';
 
 export const ActionButtons = () => {
   const [getSupplyList] = useLazyGetListDeliveriesQuery();

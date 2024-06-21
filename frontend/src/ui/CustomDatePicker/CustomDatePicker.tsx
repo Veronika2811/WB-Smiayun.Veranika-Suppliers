@@ -2,19 +2,21 @@ import { FormControl, Typography } from '@mui/material';
 import { DesktopDatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from 'dayjs';
-import { CalendarIcon } from 'ui/icons';
+import { CalendarIcon } from 'ui/Icons';
 
 import 'dayjs/locale/ru';
 
 import { CustomCalendarHeader } from './components/CustomCalendarHeader';
 import { CustomDay } from './components/CustomDay';
+import { dateFormatting } from './helpers/dateFormatting';
+import { dayOfWeekFormatter } from './helpers/dayOfWeekFormatter';
 import { customDatePickerSx } from './styles';
 
-type CustomDatePickerProps = {
+interface CustomDatePickerProps {
   selectedDate: string | Dayjs;
   handleDateChange: (date: Dayjs) => void;
   error: boolean;
-};
+}
 
 export const CustomDatePicker = ({
   selectedDate,
@@ -26,11 +28,12 @@ export const CustomDatePicker = ({
     return day.isBefore(tomorrow, 'day');
   };
 
-  const formatValue =
-    typeof selectedDate === 'string' ? dayjs(selectedDate) : selectedDate;
+  const formatValue = dateFormatting(selectedDate);
 
   const onChangeDatePicker = (date: Dayjs | null) => {
-    if (date) handleDateChange(date);
+    if (!date) return;
+
+    handleDateChange(date);
   };
 
   return (
@@ -50,10 +53,7 @@ export const CustomDatePicker = ({
           slotProps={{
             textField: { inputProps: { placeholder: '__.__.____' } },
           }}
-          dayOfWeekFormatter={(date) => {
-            const dayWeek = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
-            return dayWeek[date.day()];
-          }}
+          dayOfWeekFormatter={dayOfWeekFormatter}
           sx={{
             ...customDatePickerSx['date-picker'],
             '& .MuiInputBase-root .MuiOutlinedInput-notchedOutline': {

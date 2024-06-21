@@ -19,7 +19,7 @@
       "hooks/*": ["hooks/*"],
       "layout/*": ["layout/*"],
       "pages/*": ["pages/*"],
-      "service/*": ["service/*"],
+      "services/*": ["services/*"],
       "shared/*": ["shared/*"],
       "store/*": ["store/*"],
       "theme/*": ["theme/*"],

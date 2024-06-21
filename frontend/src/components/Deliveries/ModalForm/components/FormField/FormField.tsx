@@ -8,7 +8,7 @@ import { NumberInputField } from '../NumberInputField/NumberInputField';
 
 import { formFieldSx } from './styles';
 
-type FormFieldProps = {
+interface FormFieldProps {
   label: string;
   fieldName: string;
   onChangeSelect: (event: SelectChangeEvent<string>) => void;
@@ -16,7 +16,7 @@ type FormFieldProps = {
   handleListChange: (name: string, value: string) => void;
   fieldsList?: string[];
   value?: string | number | Dayjs;
-};
+}
 
 export const FormField = ({
   label,

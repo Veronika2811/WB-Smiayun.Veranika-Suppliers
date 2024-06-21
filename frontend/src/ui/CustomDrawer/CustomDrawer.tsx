@@ -4,12 +4,12 @@ import { Drawer, IconButton } from '@mui/material';
 
 import { customDrawerSx } from './styles';
 
-type CustomDrawerProps = {
+interface CustomDrawerProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   children: ReactNode;
   anchor?: 'left' | 'top' | 'right' | 'bottom';
-};
+}
 
 export const CustomDrawer = ({
   open,

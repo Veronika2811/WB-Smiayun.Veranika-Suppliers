@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import { IconButton } from '@mui/material';
 
-type CustomIconButton = {
+interface CustomIconButton {
   icon: ReactNode;
   ariaLabel: string;
   title: string;
   onClick?: () => void;
-};
+}
 
 export const CustomIconButton = ({
   icon,

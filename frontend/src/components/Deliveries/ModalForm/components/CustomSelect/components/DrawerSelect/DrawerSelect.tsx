@@ -2,21 +2,21 @@ import { ChangeEvent, useState } from 'react';
 import { TextField, Typography } from '@mui/material';
 import { Dayjs } from 'dayjs';
 import { CustomDrawer } from 'ui/CustomDrawer/CustomDrawer';
-import { ChevronDownIcon } from 'ui/icons/ChevronDownIcon';
-import { ChevronUpIcon } from 'ui/icons/ChevronUpIcon';
+import { ChevronDownIcon } from 'ui/Icons/ChevronDownIcon';
+import { ChevronUpIcon } from 'ui/Icons/ChevronUpIcon';
 
 import { DrawerSelectList } from '../DrawerSelectList/DrawerSelectList';
 
 import { mobileSelectSx } from './styles';
 
-type DrawerSelectProps = {
+interface DrawerSelectProps {
   label: string;
   fieldName: string;
   fieldsList: string[];
   onChangeTextField: (event: ChangeEvent<HTMLInputElement>) => void;
   handleListChange: (name: string, value: string) => void;
   value?: string | number | Dayjs;
-};
+}
 
 export const DrawerSelect = ({
   value,

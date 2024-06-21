@@ -5,13 +5,13 @@ import { Delivery, TypesModal } from 'types/delivery';
 import { FormDrawer } from 'components/Deliveries/DrawerModalSwitcher/components/FormDrawer/FormDrawer';
 import { FormModal } from 'components/Deliveries/DrawerModalSwitcher/components/FormModal/FormModal';
 
-type DrawerModalSwitcherProps = {
+interface DrawerModalSwitcherProps {
   open: boolean;
   closeModal: () => void;
   typeModal: TypesModal;
   deliveryNumber?: number;
   selectedDelivery?: Delivery;
-};
+}
 
 export const DrawerModalSwitcher = ({
   open,
@@ -25,9 +25,9 @@ export const DrawerModalSwitcher = ({
   const modalTitle =
     typeModal === NEW_DELIVERY ? 'Новая поставка' : 'Редактирование';
 
-  if (isTablet) {
+  if (!isTablet) {
     return (
-      <FormModal
+      <FormDrawer
         open={open}
         onClose={closeModal}
         title={modalTitle}
@@ -39,7 +39,7 @@ export const DrawerModalSwitcher = ({
   }
 
   return (
-    <FormDrawer
+    <FormModal
       open={open}
       onClose={closeModal}
       title={modalTitle}

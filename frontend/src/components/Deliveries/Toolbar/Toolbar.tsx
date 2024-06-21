@@ -9,7 +9,7 @@ import { SearchInput } from 'components/Deliveries/Toolbar/components/SearchInpu
 
 import { AddButton } from './components/AddButton';
 import { Title } from './components/Title';
-import { generateSixDigitNumber } from './utils/generateSixDigitNumber';
+import { getGenerateSixDigitNumber } from './helpers/getGenerateSixDigitNumber';
 import { toolbarSx } from './styles';
 
 export const Toolbar = () => {
@@ -21,10 +21,10 @@ export const Toolbar = () => {
   const { isTablet } = useCustomMediaQuery();
 
   const generateDeliveryNumber = () => {
-    let newNumber = generateSixDigitNumber();
+    let newNumber = getGenerateSixDigitNumber();
 
     while (deliveries.some((item) => item.id === newNumber)) {
-      newNumber = generateSixDigitNumber();
+      newNumber = getGenerateSixDigitNumber();
     }
 
     setDeliveryNumber(newNumber);
