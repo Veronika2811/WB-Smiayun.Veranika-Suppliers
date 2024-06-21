@@ -9,14 +9,16 @@ type CardListProps = {
   paginatedItems: Delivery[];
 };
 
-export const CardList = ({ editDelivery, paginatedItems }: CardListProps) => (
-  <>
-    {paginatedItems.length ? (
-      paginatedItems.map((card) => (
-        <DeliveryCard key={card.id} card={card} editDelivery={editDelivery} />
-      ))
-    ) : (
-      <NoDeliveriesNotice />
-    )}
-  </>
-);
+export const CardList = ({ editDelivery, paginatedItems }: CardListProps) => {
+  if (paginatedItems.length) {
+    return (
+      <>
+        {paginatedItems.map((card) => (
+          <DeliveryCard key={card.id} card={card} editDelivery={editDelivery} />
+        ))}
+      </>
+    );
+  }
+
+  return <NoDeliveriesNotice />;
+};

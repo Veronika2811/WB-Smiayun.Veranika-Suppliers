@@ -30,34 +30,34 @@ export const CustomSelect = ({
 
   const selectValue = typeof value === 'string' ? value : '';
 
+  if (isTablet) {
+    return (
+      <Select
+        fullWidth
+        value={selectValue}
+        onChange={onChange}
+        name={fieldName}
+        IconComponent={ExpandMoreRoundedIcon}
+        sx={customSelectSx.select}
+        size="small"
+      >
+        {fieldsList.map((item) => (
+          <MenuItem key={item} value={item}>
+            {item}
+          </MenuItem>
+        ))}
+      </Select>
+    );
+  }
+
   return (
-    <>
-      {isTablet ? (
-        <Select
-          fullWidth
-          value={selectValue}
-          onChange={onChange}
-          name={fieldName}
-          IconComponent={ExpandMoreRoundedIcon}
-          sx={customSelectSx.select}
-          size="small"
-        >
-          {fieldsList.map((item) => (
-            <MenuItem key={item} value={item}>
-              {item}
-            </MenuItem>
-          ))}
-        </Select>
-      ) : (
-        <DrawerSelect
-          value={value}
-          onChangeTextField={onChangeTextField}
-          handleListChange={handleListChange}
-          fieldName={fieldName}
-          label={label}
-          fieldsList={fieldsList}
-        />
-      )}
-    </>
+    <DrawerSelect
+      value={value}
+      onChangeTextField={onChangeTextField}
+      handleListChange={handleListChange}
+      fieldName={fieldName}
+      label={label}
+      fieldsList={fieldsList}
+    />
   );
 };
